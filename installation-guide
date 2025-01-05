@@ -1,0 +1,18 @@
+npm install wow.js animate.css
+
+// In _app.js
+import 'animate.css/animate.min.css';
+function MyApp({ Component, pageProps }) {
+    const isServer = typeof window === 'undefined';
+    const WOW = !isServer ? require('wow.js') : null;
+
+     // This Line Is enough For Wow Animation
+    useEffect(() => {
+        if (!isServer) {
+            new WOW().init();
+        }
+    }, []);
+
+}
+
+export default MyApp
