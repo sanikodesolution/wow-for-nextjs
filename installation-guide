@@ -1,7 +1,10 @@
 npm install wow.js animate.css
 
+// You can use your animate.css from your local folder but don't need any wow.js
+
 // In _app.js
 import 'animate.css/animate.min.css';
+
 function MyApp({ Component, pageProps }) {
     const isServer = typeof window === 'undefined';
     const WOW = !isServer ? require('wow.js') : null;
